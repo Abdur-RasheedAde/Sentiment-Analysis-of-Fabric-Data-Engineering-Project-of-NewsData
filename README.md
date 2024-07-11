@@ -5,15 +5,14 @@
 ##  Project Overview
 This is a Fabric Data Engineering project including Data Science sentiment analysis on a news data. The project ingested data using a datapipeline built in DataFractory to load data from (newsdata.io), an open source news repository which has free API keys. The data is stored as a json file in Fabric LakeHouse. The ETL process and Sentiment analysis were done using Pyspark in a jupyter notebook while Power BI was used to Visualize the final clean data. An alert was also created in PowerBI for one of the visuals using Reflex Activator  
 
-## Data Source:
-1.  Web: Data were scrapped from www.worldometers, catking.in and www.geeksforgeeks
-2.  PDF: A pdf file was downloaded from this website [Click to download pdf](https://www.miles-and-more.com/content/dam/mmg/pdf/191029_BLOOM_Laendertabelle_EN_FINAL.pdf)
-3.  Json: Data was also extracted from this json file 👉 [Download_json_file](https://github.com/Abdur-RasheedAde/Fabric_Data_Engineering_Projects/blob/main/continent-populations.json)
+## Data Source: 
+Datasource: News data were loaded from https://newsdata.io/search-news with the appropriate API keys
 
 ## DE Technical Skills:
 + Data Ingestion
-+ Data Pipeline
-+ Fabric Data Storage: Lake House, Beautiful Soup library, Excel Power Query 
++ Data Pipeline: Datafactory, increamental load, schedule refresh
++ Fabric Data Storage: json, Lake House
++ Data Science: Sentiment Analysis, ML Model 
 + Data Warehousing; Analytics Reporting
 + Extract, Transform and Load (ETL) process
 + Some Power BI Data Visualization technical skills (Documentation, Data Gathering, Power Query, Data Modelling, Report Design, Data Analysis Expression (DAX), Page Navigation and Button, Business and Analytics Reporting, Performance Optimization, Deployment and Power BI Service, Scalability)
@@ -31,7 +30,8 @@ The well transforemd final data was loaded to a LakeTable for Analytics Purposes
 -  [View first_Pyhton codes here](https://github.com/Abdur-RasheedAde/Fabric_Data_Engineering_Projects/blob/main/World_Data.ipynb)
 -  [View second_pyhton codes here](https://github.com/Abdur-RasheedAde/Fabric_Data_Engineering_Projects/blob/main/World_Continent.ipynb)
 
-4. Data Visualization with PowerBI: A Power BI Report was built directly from the loaded LakeHouse Tables with KPIs ranging from Population metrics, to LandArea and Fertility Rate. The Power Bi is also hosted within the workspace and all data modeling and report building were done in the cloud. 
+4. Data Science Sentiment Analysis with ML Model: A Power BI Report was built directly from the loaded LakeHouse Tables with KPIs ranging from Population metrics, to LandArea and Fertility Rate. The Power Bi is also hosted within the workspace and all data modeling and report building were done in the cloud.
+5. Data Visualization with PowerBI: A Power BI Report was built directly from the loaded LakeHouse Tables with KPIs ranging from Population metrics, to LandArea and Fertility Rate. The Power Bi is also hosted within the workspace and all data modeling and report building were done in the cloud. 
 
 ## KPI Building 
 While creating building the visualization, the following KPIs were considered;
