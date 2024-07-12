@@ -1,6 +1,6 @@
 # Fabric_DE_Project_of_News_with_Sentiment_Analysis
 
-![Slide1](News Sentiment Analysis.png)
+![Slide1](https://github.com/Abdur-RasheedAde/Fabric_DE_Project_of_News_with_Sentiment_Analysis/blob/main/News%20Sentiment%20Analysis.png)
 
 ##  Project Overview
 This is a Fabric Data Engineering project including Data Science sentiment analysis on a news data. The project ingested data using a datapipeline built in DataFractory to load data from (newsdata.io), an open source news repository which has free API keys. The data is stored as a json file in Fabric LakeHouse. The ETL process and Sentiment analysis were done using Pyspark in a jupyter notebook while Power BI was used to Visualize the final clean data. An alert was also created in PowerBI for one of the visuals using Reflex Activator  
