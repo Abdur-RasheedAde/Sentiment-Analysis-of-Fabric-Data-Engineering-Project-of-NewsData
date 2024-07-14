@@ -1,4 +1,4 @@
-# Fabric_DE_Project_of_News_with_Sentiment_Analysis
+# Sentiment Analysis of Fabric DE Project of NewsData
 
 ![Slide1](https://github.com/Abdur-RasheedAde/Fabric_DE_Project_of_News_with_Sentiment_Analysis/blob/main/News%20Sentiment%20Analysis.png)
 
