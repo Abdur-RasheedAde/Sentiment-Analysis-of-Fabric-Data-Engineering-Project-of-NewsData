@@ -19,39 +19,44 @@ Datasource: News data were loaded from https://newsdata.io/search-news with the 
 + Feedback and Continuous Improvement
   
 ## Data Engineering Process
-1. Data Ingestion: Data was ingested from multiple sources like web, pdf and json with the help of beautiful soup library, Excel Power Query and Pyspark respectively. the pdf file was loaded to Excel with the use of Power Query which extracted the data effortlessly and it was saved as a csv file for Lakehouse storage.  
-2. Creation of Lake House: A Lakehouse known as World_Data_Project Lakehouse was created in OneLake to encapsulate all the Data Engineering items.
-3. ETL Process: The whole Extract Transform and Load Processes were done in 2 Jupyter Notebooks in the Lakehouse with the use of Beautiful Soup library, pyspark and Pandas library. The Transformation includes and not limited to:
--  Change data type and Column names of some columns
--  remove the "$" and "," in some columns
--  joining of multiple tables
--  Correcting the names of some Countires like Algerie, USA, UAE...\
-The well transforemd final data was loaded to a LakeTable for Analytics Purposes.
--  [View first_Pyhton codes here](https://github.com/Abdur-RasheedAde/Fabric_Data_Engineering_Projects/blob/main/World_Data.ipynb)
--  [View second_pyhton codes here](https://github.com/Abdur-RasheedAde/Fabric_Data_Engineering_Projects/blob/main/World_Continent.ipynb)
-
-4. Data Science Sentiment Analysis with ML Model: A Power BI Report was built directly from the loaded LakeHouse Tables with KPIs ranging from Population metrics, to LandArea and Fertility Rate. The Power Bi is also hosted within the workspace and all data modeling and report building were done in the cloud.
-5. Data Visualization with PowerBI: A Power BI Report was built directly from the loaded LakeHouse Tables with KPIs ranging from Population metrics, to LandArea and Fertility Rate. The Power Bi is also hosted within the workspace and all data modeling and report building were done in the cloud. 
-
+1. Creation of Workspace and Lake House: A new workspace was created to host all items (Notebooks, lakehouse, pipeline, Reports, Dataset...) needed for this project. Thereafter, a Lakehouse known as News_Lake was then created in the workspace to stores all files and data table.
+2. Data Ingestion: Data was ingested from a news website as stated above. A paramitarized data pipeline was built with Fabric Data Factory to connect through a RESTAPI using the appropriate API keys. The data comes in a json file and stored as File in LakeHouse.
+3. Data Transformation: The whole Extract Transform and Load (ETL) Processes were done in 2 Jupyter Notebooks in the Lakehouse with the use of pyspark. The Transformation includes and not limited to:
+-  Explosion of json data
+-  Conversion of json file to a list and json dictionary
+-  Exceptoion handling
+-  Conversion to a DataFrame
+4. Data Warehousing - Incremental Load: Inorder to avoid duplicate of data and table as well as lost of data, a Type 1 Data Warehousing Incremental Load was adopted to load latest news data to the existing table in the Datawarehouse (Lakehouse).\
+The clean and well structured data was loaded to a LakeTable 
+-  [View ETL codes here](https://github.com/Abdur-RasheedAde/Fabric_DE_Project_of_News_with_Sentiment_Analysis/blob/main/ETL_Process_of_News.ipynb)
+5. Data Science Sentiment Analysis with ML Model: The new and appended table in the Lakehouse was loaded through a jupyter notebook while a Synapse ML Model was explored to perform sentiment analysis to categorise the description column of the data. Data then loaded again into another table in the Lakehouse while maintaining the same Type 1 Data warehouse Incremental Load.\
+[View Sentiment Analysis codes here](https://github.com/Abdur-RasheedAde/Fabric_DE_Project_of_News_with_Sentiment_Analysis/blob/main/Sentiment_Analysis.ipynb)
+6. Schedule Refresh: Since the news data is live, there is need to schedule it's refresh every morning at 9am in the data pipeline of Data Factory. This refresh covers the data Ingestion (pipeline), ETL process (notebook) and Sentiment Analysis (notebook)
+The refresh schedule is shown here 👇
+![Refresh](https://github.com/Abdur-RasheedAde/Fabric_DE_Project_of_News_with_Sentiment_Analysis/blob/main/Fabric_News_ingestion_pipeline.PNG)
+7. Visualization and Report: A Power BI Report was built directly from the loaded Sentiment Analysis Table in LakeHouse with KPIs ranging from counts of Positive, negative, mixed and neutral news as well as corresponding percebtage of each.
+The Power Bi was hosted within the workspace and all data modeling and report building were done in the cloud.
+ 
 ## KPI Building 
-While creating building the visualization, the following KPIs were considered;
-1. Top and Bottom Countries by Population
-2. Top and Bottom Countries by LandArea
-3. Top and Bottom Countries by Fertility Rate
-4. Countries, Capital, Currency, President and Prime Minister
+While building the visualization, the following KPIs were considered;
+1. Count of each review (positive, negative, neutral and mixed
+2. Percentage of each review type
+3. Review by Country
+4. Review by category...
 
 ## Report Design and Visualization
 + The Report Canvas was designed in Power Point and imported to PowerBI as canvas background.
-+ 5 pages were created; Includig each for the KPIs above and a home page.
-+ The _Home_ page is the landing page with page navigation to other pages.
-+ On each page, a map visual and bar chart were explored along with a Matrix table.
-+ Here is a sample of the Home page in Power Point.
-<img src="https://github.com/Abdur-RasheedAde/World_Report_Data_Engineering_Project-Fabric-/blob/main/Home.JPG" width=75% height=75%> 
++ Only 2 pages were created, the Home page and KPI page.
++ A sample of the Home page in Power Point shall be uploaded soon.
  
-Link to download PowrBI PDF Report is here 👉 [DownloadPDF](https://github.com/Abdur-RasheedAde/World_Report_Data_Engineering_Project-Fabric-/blob/main/World%20Data%20Report.pdf)
+Link to download PowerBI PDF Report shall also be uploaed soon.
+
+## Data Activator: 
+A reflex Data Activator alert was created for the Negative review card Visuals which sends daily report via Outlook if the review count is > 10.
+
 
 ## Conclusions 
-1. Microsoft Fabric is one-stop shop that replicate all Azure Data Services (known as items in Fabric) in one space. These items include DataFactory, Power BI, LakeHouse, Notebooks, Pipeline and so on. 
+1. Microsoft Fabric is a one-stop shop that replicate all Azure Data Services (known as items in Fabric) in one space. These items include DataFactory, Power BI, LakeHouse, Notebooks, Pipeline and so on. 
 2. It can iterract with all internal and external data sources like Azure, AWS, GCP, Dataverse and coud services like Databricks, Snowflake and others.
 3. It extensively supports SQL, Python, Scala and java Programming Languages
 4. It is awesome for Data warehousing and ETL process and visualization.
