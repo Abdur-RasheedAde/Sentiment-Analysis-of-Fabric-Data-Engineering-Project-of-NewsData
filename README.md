@@ -19,23 +19,22 @@ Datasource: News data were loaded from https://newsdata.io/search-news with the 
 + Continuous Improvement
   
 ## Data Engineering Process
-1. Creation of Workspace and Lake House: A new workspace was created to host all items (Notebooks, lakehouse, pipeline, Reports, Dataset...) needed for this project. Thereafter, a Lakehouse known as News_Lake was then created in the workspace to stores all files and data table.
-2. Data Ingestion: Data was ingested from a news website as stated above. A paramitarized data pipeline was built with Fabric Data Factory to connect through a RESTAPI using the appropriate API keys. The data comes in a json file and stored as File in LakeHouse.
-3. Data Transformation: The whole Extract Transform and Load (ETL) Processes were done in 2 Jupyter Notebooks in the Lakehouse with the use of pyspark. The Transformation includes and not limited to:
+1. Creation of Workspace and Lake House: A new workspace was created to host all fabric items (Notebooks, lakehouse, pipeline, Reports, Dataset...) needed for this project. Thereafter, a Lakehouse known as News_Lake was then created in the workspace to stores all files and data table.
+2. Data Ingestion: Data was ingested from this 👉 news website (newsdata.io). A paramitarized data pipeline was built with Fabric Data Factory to connect through a RESTAPI using the appropriate API keys. The data comes in a json file and stored as File in LakeHouse.
+3. Data Transformation: The whole Extract Transform and Load (ETL) Process was done in a Jupyter Notebook in the Lakehouse with the use of pyspark. The Transformation includes and not limited to:
 -  Explosion of json data
 -  Conversion of json file to a list and json dictionary
--  Exceptoion handling
--  Conversion to a DataFrame
-4. Data Warehousing - Incremental Load: Inorder to avoid duplicate of data and table as well as lost of data, a Type 1 Data Warehousing Incremental Load was adopted to load latest news data to the existing table in the Datawarehouse (Lakehouse).\
+-  Exception handling... 
+4. Data Warehousing - Incremental Load: Inorder to avoid duplicate of data and table as well as lost of data, a **Type 1 Data Warehousing Incremental Load** was adopted to load latest news data to the existing table in the Datawarehouse (Lakehouse).\
 The clean and well structured data was loaded to a LakeTable 
 -  [View ETL codes here](https://github.com/Abdur-RasheedAde/Fabric_DE_Project_of_News_with_Sentiment_Analysis/blob/main/ETL_Process_of_News.ipynb)
-5. Data Science Sentiment Analysis with ML Model: The new and appended table in the Lakehouse was loaded through a jupyter notebook while a Synapse ML Model was explored to perform sentiment analysis to categorise the description column of the data. Data then loaded again into another table in the Lakehouse while maintaining the same Type 1 Data warehouse Incremental Load.\
+5. Data Science Sentiment Analysis with ML Model: The new and appended table in the Lakehouse was loaded through a jupyter notebook while a Synapse ML Model was explored to perform sentiment analysis to categorise the description column. Data then loaded again into another table in the Lakehouse while maintaining the same Type 1 Data warehouse Incremental Load.\
 [View Sentiment Analysis codes here](https://github.com/Abdur-RasheedAde/Fabric_DE_Project_of_News_with_Sentiment_Analysis/blob/main/Sentiment_Analysis.ipynb)
-6. Schedule Refresh: Since the news data is live, there is need to schedule it's refresh every morning at 9am in the data pipeline of Data Factory. This refresh covers the data Ingestion (pipeline), ETL process (notebook) and Sentiment Analysis (notebook)
+6. Schedule Refresh: Since the news data is live, there is need to schedule it's refresh every morning at 9am in Data Factory. This refresh covers the data Ingestion (pipeline), ETL process (notebook) and Sentiment Analysis (notebook)
 The refresh schedule is shown here 👇
 ![Refresh](https://github.com/Abdur-RasheedAde/Fabric_DE_Project_of_News_with_Sentiment_Analysis/blob/main/Fabric_News_ingestion_pipeline.PNG)
-7. Visualization and Report: A Power BI Report was built directly from the loaded Sentiment Analysis Table in LakeHouse with KPIs ranging from counts of Positive, negative, mixed and neutral news as well as corresponding percebtage of each.
-The Power Bi was hosted within the workspace and all data modeling and report building were done in the cloud.
+7. Visualization and Report: A Power BI Report was built directly from the loaded Sentiment Analysis Table in LakeHouse with KPIs ranging from counts of positive, negative, mixed and neutral news as well as their corresponding percebtage.
+The Power BI Report as well as it's model was hosted within the workspace.
  
 ## KPI Building 
 While building the visualization, the following KPIs were considered;
