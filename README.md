@@ -25,7 +25,7 @@ Datasource: News data were loaded from https://newsdata.io/search-news with the 
 -  Explosion of json data
 -  Conversion of json file to a list and json dictionary
 -  Exception handling... 
-4. Data Warehousing - Incremental Load: Inorder to avoid duplicate of data and table as well as lost of data, a **Type 1 Data Warehousing Incremental Load** was adopted to load latest news data to the existing table in the Datawarehouse (Lakehouse).\
+4. Data Warehousing - Incremental Load: Inorder to avoid duplicate of data and table as well as lost of data, a **Type 1 SQL Merger Data Warehousing Incremental Load** was adopted to load latest news data to the existing table in the Datawarehouse (Lakehouse).\
 The clean and well structured data was loaded to a LakeTable 
 -  [View ETL codes here](https://github.com/Abdur-RasheedAde/Fabric_DE_Project_of_News_with_Sentiment_Analysis/blob/main/ETL_Process_of_News.ipynb)
 5. Data Science Sentiment Analysis with ML Model: The new and appended table in the Lakehouse was loaded through a jupyter notebook while a Synapse ML Model was explored to perform sentiment analysis to categorise the description column. Data then loaded again into another table in the Lakehouse while maintaining the same Type 1 Data warehouse Incremental Load.\
