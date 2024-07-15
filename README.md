@@ -40,8 +40,9 @@ The Power BI Report as well as it's model was hosted within the workspace.
 While building the visualization, the following KPIs were considered;
 1. Count of each review (positive, negative, neutral and mixed
 2. Percentage of each review type
-3. Review by Country
-4. Review by category...
+3. Total Review
+4. Review by Country
+5. Review by category...
 
 ## Report Design and Visualization
 + The Report Canvas was designed in Power Point and imported to PowerBI as canvas background.
