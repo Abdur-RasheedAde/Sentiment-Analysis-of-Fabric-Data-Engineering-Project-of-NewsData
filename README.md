@@ -51,6 +51,8 @@ While building the visualization, the following KPIs were considered;
 <img src="https://github.com/Abdur-RasheedAde/Sentiment-Analysis-of-Fabric-Data-Engineering-Project-of-NewsData/blob/main/HomePage.png" width=75% height=75%> 
  Link to download PowrBI PDF Report is here 👉 [DownloadPDF](https://github.com/Abdur-RasheedAde/Sentiment-Analysis-of-Fabric-Data-Engineering-Project-of-NewsData/blob/main/News_Report.pdf)
 
+Link to download PowrBI PDF Report is here 👉 [DownloadPDF](https://github.com/Abdur-RasheedAde/Sentiment-Analysis-of-Fabric-Data-Engineering-Project-of-NewsData/blob/main/News_Report.pdf)
+
 ## Data Activator: 
 A reflex Data Activator alert was created for the Negative review card Visuals which sends daily report via Outlook if the review count is > 10.
 
