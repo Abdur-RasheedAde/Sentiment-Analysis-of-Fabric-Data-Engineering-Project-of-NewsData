@@ -50,7 +50,6 @@ While building the visualization, the following KPIs were considered;
 + A sample of the Home page in here 👇 below.
 <img src="https://github.com/Abdur-RasheedAde/Sentiment-Analysis-of-Fabric-Data-Engineering-Project-of-NewsData/blob/main/HomePage.png" width=75% height=75%> 
 Link to download PowrBI PDF Report is here 👉 [DownloadPDF](https://github.com/Abdur-RasheedAde/Sentiment-Analysis-of-Fabric-Data-Engineering-Project-of-NewsData/blob/main/News_Report.pdf)
-[Download PDF Report](https://www.miles-and-more.com/content/dam/mmg/pdf/191029_BLOOM_Laendertabelle_EN_FINAL.pdf)
 
 ## Data Activator: 
 A reflex Data Activator alert was created for the Negative review card Visuals which sends daily report via Outlook if the review count is > 10.
