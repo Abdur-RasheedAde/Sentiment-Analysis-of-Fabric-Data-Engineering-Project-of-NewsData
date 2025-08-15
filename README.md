@@ -1,4 +1,13 @@
-# Sentiment Analysis of Fabric DE Project of NewsData
+# 🚀 Sentiment Analysis of Fabric DE Project of NewsData
+
+## 🧠 **Author** Abdur-Rasheed Abiodun Adeoye  
+Data Engineer | Data Analyst | Bioinformatics    
+**Date:** August 2025  
+**Domain:** Bioinformatics, Cheminformatics, Drug Discovery  
+**Tools & Libraries:** Python, SQL, Fabric, Apache Spark, Pyspark   
+**Contacts:** - [LinkedIn](https://www.linkedin.com/in/abdur-rasheed-adeoye/)
+              - [GitHub](https://github.com/Abdur-RasheedAde)
+
 
 ![Slide1](https://github.com/Abdur-RasheedAde/Sentiment-Analysis-of-Fabric-Data-Engineering-Project-of-NewsData/blob/main/NewsProject.png)
 
